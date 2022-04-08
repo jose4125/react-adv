@@ -1,5 +1,6 @@
 import { lazy } from "react";
 import { NoLazy } from "../pages/NoLazy";
+import { ShoppingPage } from '../pages/ShoppingPage'
 
 import { Route } from "./interfaces";
 
@@ -40,5 +41,11 @@ export const routes: Route[] = [
     path: "nolazy",
     Component: NoLazy,
     name: "no lazy",
+  },
+  {
+    to: "/shopping",
+    path: "shopping",
+    Component: ShoppingPage,
+    name: "shopping",
   },
 ];
