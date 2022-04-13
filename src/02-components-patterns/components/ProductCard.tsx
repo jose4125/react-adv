@@ -9,8 +9,9 @@ import noImage from '../assets/no-image.jpg'
 export const ProductContext = createContext({} as ProductContextProps)
 const {Provider} = ProductContext
 
-export const ProductCard = ({product, children} : ProductCardProps) => {
+export const ProductCard = ({product, children, className, style} : ProductCardProps) => {
   const { counter, handleAdd, handleMinus } = useProducts(0)
+  const classes = `${styles.productCard} ${className}`
 
   return (
     <Provider value={{
@@ -19,7 +20,7 @@ export const ProductCard = ({product, children} : ProductCardProps) => {
       handleMinus,
       product
     }}>
-      <div className={styles.productCard}>
+      <div className={classes} style={style}>
         {children}
       </div>
     </Provider>
